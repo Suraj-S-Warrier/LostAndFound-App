@@ -2,6 +2,7 @@ package com.example.lostandfound
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.Toast
 import com.example.lostandfound.databinding.ActivityRegisterPageBinding
 import com.example.lostandfound.databinding.ActivityResetPasswordBinding
@@ -36,11 +37,11 @@ class reset_password : AppCompatActivity() {
 
         binding.resetButton.setOnClickListener{
             // whatever output we get like this, we need to first convert to string using tostring function so that we can use it later
-            val email = binding.editTextTextEmailAddress2.toString()
-            if(email.isNotEmpty()){
+            val email: EditText = findViewById(R.id.editTextTextEmailAddress2)
+            if(email.text.toString().isNotEmpty()){
 
                 // in the assignment, it is given to send email and then give link- clicking that, we get new password and confirm password text-boxes.. but in this, all the process is done automatically..not being able to change anything and by default, only new password option seems to be there
-                firebaseAuth.sendPasswordResetEmail(email)
+                firebaseAuth.sendPasswordResetEmail(email.text.toString())
                     .addOnSuccessListener {
 
                         // toast is basically giving a message in the output

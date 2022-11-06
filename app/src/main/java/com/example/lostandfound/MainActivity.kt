@@ -3,10 +3,12 @@ package com.example.lostandfound
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.lostandfound.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
-// havent made it look appealing..have to change its looks a lot but first functional parts needs to be done
+// haven't made it look appealing..have to change its looks a lot but first functional parts needs to be done
 // also some explanation comments written in reset_password.kt file for clarity
 class MainActivity : AppCompatActivity() {
 
@@ -21,8 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-
-        binding.editTextNumberPassword.setOnClickListener{
+        binding.textView2.setOnClickListener{
 
             // in the assignment, it is given to login using a username and password.. but yt seem to have only login with email and password method..have to find another way or have to go with this only
             val username = binding.editTextTextEmailAddress3.toString()
@@ -38,14 +39,24 @@ class MainActivity : AppCompatActivity() {
 
         }
         binding.button.setOnClickListener{
-            val email = binding.editTextTextEmailAddress3.toString()
-            val password = binding.editTextNumberPassword.toString()
-            if(email.isNotEmpty() && password.isNotEmpty()){
-                firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener {
+            val email: EditText=findViewById(R.id.editTextTextEmailAddress3)
+            val password: EditText = findViewById(R.id.editTextTextPassword3)
+            if(email.text.toString().isNotEmpty() && password.text.toString().isNotEmpty()){
+                firebaseAuth.signInWithEmailAndPassword(email.text.toString(),password.text.toString()).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        // post login activities
-                    } else {
-                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                        val user = firebaseAuth.currentUser?.isEmailVerified
+                        if(user == true)
+                        {
+                            val intent = Intent(this, Main_page::class.java)
+                            startActivity(intent)
+                        }
+                        else{
+                            Toast.makeText(this, "Please verify your email id",Toast.LENGTH_SHORT).show()
+                        }
+
+                    }
+                    else {
+                        Toast.makeText(this, "account not found. Please try again", Toast.LENGTH_SHORT).show()
                     }
                 }
             }

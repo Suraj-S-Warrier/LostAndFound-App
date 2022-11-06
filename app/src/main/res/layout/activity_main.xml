@@ -16,21 +16,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <EditText
-        android:id="@+id/editTextNumberPassword"
-        android:layout_width="313dp"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:hint="@string/password"
-        android:importantForAutofill="no"
-        android:inputType="textPassword|numberPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3"
-        app:layout_constraintVertical_bias="0.076"
-        app:passwordToggleEnabled="true" />
-
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -40,8 +25,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword"
-        app:layout_constraintVertical_bias="0.147" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3"
+        app:layout_constraintVertical_bias="0.06" />
 
     <Button
         android:id="@+id/button3"
@@ -59,14 +44,13 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:text="@string/forgot_password_act1"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintHorizontal_bias="0.832"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3"
+        app:layout_constraintVertical_bias="0.316" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress3"
@@ -74,13 +58,29 @@
         android:layout_height="50dp"
         android:layout_marginTop="36dp"
         android:ems="10"
-        android:hint="email id:"
+        android:hint="@string/email_id_act1"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
-        app:layout_constraintVertical_bias="0.011" />
+        app:layout_constraintVertical_bias="0.011"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword3"
+        android:layout_width="314dp"
+        android:layout_height="54dp"
+        android:ems="10"
+        android:hint="@string/password_act1"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3"
+        app:layout_constraintVertical_bias="0.029"
+        android:importantForAutofill="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

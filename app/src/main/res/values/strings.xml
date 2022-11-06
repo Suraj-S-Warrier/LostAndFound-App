@@ -17,4 +17,13 @@
     <string name="submit_act2">SUBMIT</string>
     <string name="forgot_password_act1">Forgot password?</string>
     <string name="forgot_password_act3">FORGOT PASSWORD</string>
+    <string name="password_act1">Password:</string>
+    <string name="email_id_act1">email id:</string>
+    <string name="post_for_lost_item">POST FOR LOST ITEM</string>
+    <string name="phone">Phone:</string>
+    <string name="where_lost_lostitemact">Where lost:</string>
+    <string name="name_lostitemact">Name:</string>
+    <string name="message_lostitemact">Message:</string>
+    <string name="upload_images_lostitemact">UPLOAD IMAGES</string>
+    <string name="submit_lostitemact">SUBMIT</string>
 </resources>
