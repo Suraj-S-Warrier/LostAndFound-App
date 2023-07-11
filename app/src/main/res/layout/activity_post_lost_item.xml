@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".PostLostItem">
 
     <TextView
@@ -24,66 +25,78 @@
 
     <EditText
         android:id="@+id/NameLostItem"
-        android:layout_width="375dp"
-        android:layout_height="64dp"
+        android:layout_width="210dp"
+        android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/name_lostitemact"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:backgroundTint="#C1C1C1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/postLostItemHeading"
-        app:layout_constraintVertical_bias="0.075"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.231" />
 
     <EditText
         android:id="@+id/LostItemPhone"
-        android:layout_width="375dp"
-        android:layout_height="64dp"
+        android:layout_width="210dp"
+        android:layout_height="50dp"
         android:ems="10"
         android:hint="@string/phone"
+        android:importantForAutofill="no"
         android:inputType="phone"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:backgroundTint="#C1C1C1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NameLostItem"
-        app:layout_constraintVertical_bias="0.034"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.367" />
 
     <EditText
         android:id="@+id/WhereLostInfo"
-        android:layout_width="376dp"
-        android:layout_height="111dp"
+        android:layout_width="363dp"
+        android:layout_height="52dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/where_lost_lostitemact"
+        android:importantForAutofill="no"
         android:inputType="textMultiLine"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:backgroundTint="#C1C1C1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LostItemPhone"
-        app:layout_constraintVertical_bias="0.045"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
     <EditText
         android:id="@+id/MsgLostItem"
-        android:layout_width="375dp"
-        android:layout_height="159dp"
+        android:layout_width="365dp"
+        android:layout_height="124dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/message_lostitemact"
+        android:importantForAutofill="no"
         android:inputType="textMultiLine"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:backgroundTint="#C1C1C1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WhereLostInfo"
-        app:layout_constraintVertical_bias="0.075"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.699" />
 
     <Button
         android:id="@+id/UploadLostItemImgs"
@@ -92,10 +105,10 @@
         android:text="@string/upload_images_lostitemact"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MsgLostItem"
-        app:layout_constraintVertical_bias="0.154" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.854" />
 
     <Button
         android:id="@+id/submitLostItem"
@@ -104,6 +117,23 @@
         android:text="@string/submit_lostitemact"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UploadLostItemImgs" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
+
+    <ImageView
+        android:id="@+id/PostLostItemImage"
+        android:layout_width="122dp"
+        android:layout_height="122dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.276"
+        tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>

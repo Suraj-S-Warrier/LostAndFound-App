@@ -26,4 +26,6 @@
     <string name="message_lostitemact">Message:</string>
     <string name="upload_images_lostitemact">UPLOAD IMAGES</string>
     <string name="submit_lostitemact">SUBMIT</string>
+    <string name="post_for_found_item">POST FOR FOUND ITEM</string>
+    <string name="where_found">Where found:</string>
 </resources>

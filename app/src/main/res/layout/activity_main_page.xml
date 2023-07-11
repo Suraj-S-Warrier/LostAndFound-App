@@ -4,21 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".Main_page">
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/LostItemFeed"
         android:layout_width="335dp"
         android:layout_height="50dp"
         android:text="CHECK FEED OF LOST ITEMS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6"
+        app:layout_constraintTop_toBottomOf="@+id/FoundItemPost"
         app:layout_constraintVertical_bias="0.025" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/LostItemPost"
         android:layout_width="335dp"
         android:layout_height="50dp"
         android:text="POST FOR LOST ITEM"
@@ -30,7 +31,7 @@
         app:layout_constraintVertical_bias="0.331" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/FoundItemPost"
         android:layout_width="335dp"
         android:layout_height="50dp"
         android:text="POST FOR FOUND ITEM"
@@ -38,11 +39,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/LostItemPost"
         app:layout_constraintVertical_bias="0.025" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/FoundItemFeed"
         android:layout_width="335dp"
         android:layout_height="50dp"
         android:text="CHECK FEED OF FOUND ITEMS"
@@ -50,11 +51,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7"
+        app:layout_constraintTop_toBottomOf="@+id/LostItemFeed"
         app:layout_constraintVertical_bias="0.025" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/MyPosts"
         android:layout_width="335dp"
         android:layout_height="50dp"
         android:text="MY POSTS"
@@ -62,11 +63,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8"
+        app:layout_constraintTop_toBottomOf="@+id/FoundItemFeed"
         app:layout_constraintVertical_bias="0.025" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/UpdatePassword"
         android:layout_width="335dp"
         android:layout_height="50dp"
         android:text="UPDATE PASSWORD"
@@ -74,6 +75,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button9"
+        app:layout_constraintTop_toBottomOf="@+id/MyPosts"
         app:layout_constraintVertical_bias="0.025" />
 </androidx.constraintlayout.widget.ConstraintLayout>

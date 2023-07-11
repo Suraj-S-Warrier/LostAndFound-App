@@ -1,8 +1,12 @@
 package com.example.lostandfound
 
+import android.app.ProgressDialog
 import android.content.Intent
+import android.graphics.PorterDuff
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -10,11 +14,15 @@ import com.example.lostandfound.databinding.ActivityRegisterPageBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.net.URI
+import java.text.SimpleDateFormat
+import java.util.*
 
 class register_page : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterPageBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var ImageUri: Uri
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,11 +43,14 @@ class register_page : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
 
-
+        binding.button4.setOnClickListener {
+            val intent =Intent(this, SelectImageScreen::class.java)
+            startActivity(intent)
+        }
         binding.button5.setOnClickListener {
 
             val db = Firebase.firestore
-            var user = firebaseAuth.getCurrentUser()
+            val user = firebaseAuth.getCurrentUser()
             username = findViewById(R.id.editTextTextPersonName)
             rollno = findViewById(R.id.editTextTextPersonName2)
             email = findViewById(R.id.editTextTextEmailAddress)
@@ -69,13 +80,16 @@ class register_page : AppCompatActivity() {
 
 
                                     if (user != null) {
-                                        user.sendEmailVerification().addOnCompleteListener {
+                                        user.sendEmailVerification().addOnSuccessListener {
                                             Toast.makeText(
                                                 this,
                                                 "Click on the activation link sent to your email id to activate account",
                                                 Toast.LENGTH_SHORT
                                             ).show()
 
+
+                                        }.addOnFailureListener {
+                                            Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
                                         }
                                     }
 
@@ -87,17 +101,17 @@ class register_page : AppCompatActivity() {
 
                                     val uid = user?.uid.toString()
                                     val regData = hashMapOf(
+                                        "uid" to uid,
                                         "username" to username.text.toString(),
                                         "rollno" to rollno.text.toString(),
                                         "email" to email.text.toString(),
-                                        "password" to password.text.toString(),
                                         "phone" to phone.text.toString()
                                     )
-                                    db.collection("users").document(uid).collection("registrationData").add(regData)
-                                        .addOnSuccessListener { documentReference ->
+                                    db.collection("users").document(uid).set(regData)
+                                        .addOnSuccessListener {
                                             Toast.makeText(
                                                 this,
-                                                "Data $documentReference added successfully",
+                                                "Data added successfully",
                                                 Toast.LENGTH_SHORT
                                             ).show()
                                         }
@@ -111,6 +125,7 @@ class register_page : AppCompatActivity() {
 
                                     val intent = Intent(this, MainActivity::class.java)
                                     startActivity(intent)
+                                    finish()
             // need to figure out how to send userdata to database after the email verification
 
 
@@ -136,6 +151,10 @@ class register_page : AppCompatActivity() {
                     ).show()
                 }
             }
+            else{
+                Toast.makeText(this, "Fill in all the fields",Toast.LENGTH_SHORT).show()
+            }
+
 
 
 //                if(pass == confirmpass ){
@@ -197,4 +216,6 @@ class register_page : AppCompatActivity() {
 
         }
     }
+
+
 }

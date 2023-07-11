@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="10dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/LostItemFeedImage"
+            android:layout_width="118dp"
+            android:layout_height="110dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="65dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/Loser_name"
+            android:layout_width="245dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="75dp"
+            android:layout_toEndOf="@+id/LostItemFeedImage"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="20sp"
+            tools:text="Name:" />
+
+        <TextView
+            android:id="@+id/Loser_phone"
+            android:layout_width="245dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/Loser_name"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@+id/LostItemFeedImage"
+            android:text="Phone:"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Loser_message"
+            android:layout_width="375dp"
+            android:layout_height="119dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="195dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="20sp"
+            tools:text="Message:" />
+
+        <TextView
+            android:id="@+id/Lost_date"
+            android:layout_width="370dp"
+            android:layout_height="49dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:text="Date" />
+
+        <Button
+            android:id="@+id/Found_It"
+            android:layout_width="267dp"
+            android:layout_height="66dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="339dp"
+            android:layout_marginEnd="53dp"
+            android:text="I FOUND IT" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
