@@ -21,7 +21,7 @@ The Lost and Found App is a mobile application developed as part of a project at
 
 1. **Clone the Repository**:
 
-git clone https://github.com/yourusername/lost-and-found-app.git
+git clone https://github.com/Suraj-S-Warrier/LostAndFound-App
 
 2. **Open in Android Studio**:
 
